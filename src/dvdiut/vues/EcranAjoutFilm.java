@@ -323,13 +323,13 @@ public class EcranAjoutFilm extends JFrame implements ActionListener, ListSelect
 		}
 		else if(listActeur.getModel().getSize() == 0)
 		{
-			int option= JOptionPane.showConfirmDialog(this, "Il n'y a pas d'acteur. Voulez-vous continuer ?.","Attention", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
+			int option= JOptionPane.showConfirmDialog(this, "Il n'y a pas d'acteur. Voulez-vous continuer ?","Attention", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
 			
 			if(option == JOptionPane.OK_OPTION)
 			{
 				if (ajouterFilm())
 				{
-					JOptionPane.showMessageDialog(this, "Le film à été ajouté avec succès !.");
+					JOptionPane.showMessageDialog(this, "Le film à été ajouté avec succès !");
 				}
 				else
 				{
@@ -346,7 +346,14 @@ public class EcranAjoutFilm extends JFrame implements ActionListener, ListSelect
 		}
 		else
 		{
-			ajouterFilm();
+			if (ajouterFilm())
+			{
+				JOptionPane.showMessageDialog(this, "Le film à été ajouté avec succès !");
+			}
+			else
+			{
+				JOptionPane.showMessageDialog(this, "Le film n'a pas été ajouté !", "Erreur", JOptionPane.ERROR_MESSAGE);
+			}
 			listModel.clear();
 			listActeur.setModel(listModel);
 			tfdTitre.setText("");
@@ -354,7 +361,6 @@ public class EcranAjoutFilm extends JFrame implements ActionListener, ListSelect
 			tfdPrenom.setText("");
 			tfdNomRealisateur.setText("");
 			tfdPrenomRealisateur.setText("");
-			JOptionPane.showMessageDialog(this, "Le film à été ajouté avec succès !.");
 		}
 	}
 	

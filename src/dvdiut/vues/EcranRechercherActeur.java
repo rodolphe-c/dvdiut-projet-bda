@@ -210,7 +210,7 @@ public class EcranRechercherActeur extends JFrame implements ActionListener, Lis
 		{
 			String a =new String("Titre : "+((Film)listFilms.getSelectedValue()).getTitre().toUpperCase() + "\n");
 			String g = new String ("Genre : "+((Film)listFilms.getSelectedValue()).getGenre().toUpperCase() + "\n");
-			String b =new String("Réalisateur : "+((Film)listFilms.getSelectedValue()).getRealisateur() + "\n");
+			String b =new String("Réalisateur : " + (String)controlleur.getRealisateur(co, ((Film)listFilms.getSelectedValue()).getNumFilm()).get("nom") + " " +(String)controlleur.getRealisateur(co, ((Film)listFilms.getSelectedValue()).getNumFilm()).get("prenom") + "\n");
 			String c = new String ("Acteurs :\n");
 			String d = a+g+b+c;
 			ArrayList<String> liste = getActeurs(co, (Film)listFilms.getSelectedValue());

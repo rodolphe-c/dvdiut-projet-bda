@@ -29,7 +29,7 @@ public class OutilsJDBC
 		{
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			co= DriverManager.getConnection(url);
-			JOptionPane.showMessageDialog(null, "Connexion établi !");
+			JOptionPane.showMessageDialog(null, "Connexion établie !");
 			return co;
 		}
 		catch (ClassNotFoundException e)

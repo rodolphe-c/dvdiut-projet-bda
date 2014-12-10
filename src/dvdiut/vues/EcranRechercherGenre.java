@@ -193,7 +193,7 @@ public class EcranRechercherGenre extends JFrame implements ActionListener, List
 		{
 			String a = new String("Titre : "+((Film)listFilms.getSelectedValue()).getTitre().toUpperCase() + "\n");
 			String g = new String ("Genre : "+((Film)listFilms.getSelectedValue()).getGenre().toUpperCase() + "\n");
-			String b = new String("Réalisateur : "+((Film)listFilms.getSelectedValue()).getRealisateur() + "\n");
+			String b = new String("Réalisateur : "+((Film)listFilms.getSelectedValue()).getRealisateur().getNom()+" " + ((Film)listFilms.getSelectedValue()).getRealisateur().getPrenom() +"\n");
 			String c = new String ("Acteurs :\n");
 			String d = a+g+b+c;
 			ArrayList<String> liste = getActeurs(co, (Film)listFilms.getSelectedValue());

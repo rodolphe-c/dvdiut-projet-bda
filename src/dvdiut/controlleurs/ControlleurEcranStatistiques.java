@@ -23,7 +23,12 @@ public class ControlleurEcranStatistiques
 	 */
 	public Object[][] initTableauActeur(Connection co)
 	{
-		String requete = new String("SELECT I.nomIndividu, I.prenomIndividu, COUNT(*) AS nbFilms FROM ENS2004.FILM F, ENS2004.ACTEUR A, ENS2004.INDIVIDU I WHERE F.numFilm = A.numFilm AND A.numIndividu = I.numIndividu GROUP BY I.numIndividu, I.nomIndividu, I.prenomIndividu ORDER BY nbFilms DESC");
+		String requete = new String("SELECT I.nomIndividu, I.prenomIndividu, COUNT(*) AS nbFilms "
+								  + "FROM ENS2004.FILM F, ENS2004.ACTEUR A, ENS2004.INDIVIDU I "
+								  + "WHERE F.numFilm = A.numFilm "
+								  + "AND A.numIndividu = I.numIndividu "
+								  + "GROUP BY I.numIndividu, I.nomIndividu, I.prenomIndividu "
+								  + "ORDER BY nbFilms DESC");
 		ResultSet resultat1 = OutilsJDBC.exec1Requete(requete,co,1);
 		
 		Object[][] a = new Object[10][3];
@@ -54,7 +59,11 @@ public class ControlleurEcranStatistiques
 	 */
 	public Object[][] initTableauRealisateur(Connection co)
 	{
-		String requete = new String("SELECT I.nomIndividu, I.prenomIndividu, COUNT(*) AS nbFilms FROM ENS2004.FILM F, ENS2004.INDIVIDU I WHERE F.realisateur = I.numIndividu GROUP BY I.numIndividu, I.nomIndividu, I.prenomIndividu ORDER BY nbFilms DESC");
+		String requete = new String("SELECT I.nomIndividu, I.prenomIndividu, COUNT(*) AS nbFilms "
+								  + "FROM ENS2004.FILM F, ENS2004.INDIVIDU I "
+								  + "WHERE F.realisateur = I.numIndividu "
+								  + "GROUP BY I.numIndividu, I.nomIndividu, I.prenomIndividu "
+								  + "ORDER BY nbFilms DESC");
 		ResultSet resultat1 = OutilsJDBC.exec1Requete(requete,co,1);
 		
 		Object[][] a = new Object[10][3];
@@ -85,7 +94,11 @@ public class ControlleurEcranStatistiques
 	 */
 	public Object[][] initTableauGenre(Connection co)
 	{
-		String requete = new String("SELECT G.CODEGENRE, G.LIBELLEGENRE, COUNT(*) AS nbFilms FROM ENS2004.GENRE G, ENS2004.GENREFILM GF WHERE G.CODEGENRE = GF.CODEGENRE  GROUP BY G.CODEGENRE, G.LIBELLEGENRE ORDER BY nbFilms DESC");
+		String requete = new String("SELECT G.CODEGENRE, G.LIBELLEGENRE, COUNT(*) AS nbFilms "
+								  + "FROM ENS2004.GENRE G, ENS2004.GENREFILM GF "
+								  + "WHERE G.CODEGENRE = GF.CODEGENRE  "
+								  + "GROUP BY G.CODEGENRE, G.LIBELLEGENRE "
+								  + "ORDER BY nbFilms DESC");
 		
 		ResultSet resultat1 = OutilsJDBC.exec1Requete(requete,co,1);
 		

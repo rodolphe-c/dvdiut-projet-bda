@@ -82,7 +82,7 @@ public class EcranMenu extends JFrame implements ActionListener {
 		btnRechercherFilm.addActionListener(this);
 		pnlChoix.add(btnRechercherFilm);
 		
-		btnStatistique = new JButton("Afiicher les statistiques");
+		btnStatistique = new JButton("Afficher les statistiques");
 		btnStatistique.addActionListener(this);
 		pnlChoix.add(btnStatistique);
 		

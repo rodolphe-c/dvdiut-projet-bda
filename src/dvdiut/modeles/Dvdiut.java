@@ -602,7 +602,6 @@ public class Dvdiut
 			while(resultat1.next())
 			{ 
 				Film a = new Film(resultat1.getInt("numFilm"), resultat1.getString("Titre"), nom, prenom,resultat1.getString("LIBELLEGENRE"));
-				System.out.println(a);
 				liste.addElement(a);
 			}
 		}
@@ -656,8 +655,17 @@ public class Dvdiut
 			ResultSet resultat1 = OutilsJDBC.exec1Requete(requete,co,1);
 			while(resultat1.next())
 			{ 
-				Film a = new Film(resultat1.getInt("numFilm"), resultat1.getString("Titre"), resultat1.getString("nomindividu"), resultat1.getString("nomindividu"), genre);
-				System.out.println(a);
+				String prenom = new String();
+				if(resultat1.getString("prenomindividu") != null)
+				{
+					prenom = resultat1.getString("prenomindividu");
+				}
+				String nom = new String();
+				if(resultat1.getString("nomindividu") != null)
+				{
+					prenom = resultat1.getString("nomindividu");
+				}
+				Film a = new Film(resultat1.getInt("numFilm"), resultat1.getString("Titre"), nom, prenom, genre);
 				liste.addElement(a);
 			}
 		}
@@ -768,7 +776,6 @@ public class Dvdiut
 			while(resultat1.next())
 			{ 
 				Film a = new Film(resultat1.getInt("numFilm"), resultat1.getString("Titre"), nom, prenom, resultat1.getString("LIBELLEGENRE"));
-				System.out.println(a);
 				liste.addElement(a);
 			}
 		}

@@ -2,12 +2,14 @@ package dvdiut.controlleurs;
 
 import java.sql.Connection;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JFrame;
 
 import dvdiut.modeles.Dvdiut;
 import dvdiut.modeles.Film;
+import dvdiut.modeles.Individu;
 import dvdiut.vues.EcranRechercherActeur;
 
 /**
@@ -67,5 +69,19 @@ public class ControlleurEcranRechercherActeur
 	{
 		Dvdiut d = new Dvdiut();
 		return d.initFilm(co, nom, prenom);
+	}
+	
+	/**
+	 * Récupérer un réalisateur
+	 * 
+	 * @param co Connexion
+	 * @param f Film
+	 * @return Retourne le nom et le prénom du réalisateur
+	 */
+	public HashMap<String, String> getRealisateur(Connection co, int f)
+	{
+		Dvdiut d = new Dvdiut();
+		return d.getRealisateur(co, f);
+		
 	}
 }
