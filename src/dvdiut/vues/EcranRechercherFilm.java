@@ -86,7 +86,7 @@ public class EcranRechercherFilm extends JFrame implements ActionListener, Navig
 		btnRechercherParGenre.addActionListener(this);
 		pnlChoix.add(btnRechercherParGenre);
 		
-		btnRechercherParAuteur = new JButton("Rechercher par auteur");
+		btnRechercherParAuteur = new JButton("Rechercher par acteur");
 		btnRechercherParAuteur.addActionListener(this);
 		pnlChoix.add(btnRechercherParAuteur);
 		

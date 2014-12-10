@@ -83,7 +83,7 @@ public class EcranConnexion extends JFrame implements ActionListener {
 		lblLogo.setIcon(new ImageIcon(EcranConnexion.class.getResource("/dvdiut/img/logo.png")));
 		pnlTitre.add(lblLogo);
 		
-		JLabel lblConnexion = new JLabel("Connexion à la base de donnée Oracle");
+		JLabel lblConnexion = new JLabel("Connexion à la base de données Oracle");
 		pnlTitre.add(lblConnexion);
 		
 		JPanel panel = new JPanel();

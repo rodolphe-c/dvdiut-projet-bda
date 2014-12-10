@@ -469,47 +469,26 @@ public class Dvdiut
 			int numRealisateur = 0;
 			int numFilm = 0;
 			
-			/// AJOUT DU FILM
-			if(filmExiste(co,titre))
+			if(titre.length() >=30)
 			{
-				if(nvFilmExiste(co,titre))
-				{
-					return false;
-				}
-				else
-				{
-					/// AJOUT DU REALISATEUR
-					if(individuExiste(co, nomRealisateur, prenomRealisateur))
-					{
-						if(!nvIndividuExiste(co, nomRealisateur, prenomRealisateur))
-						{
-							numRealisateur = getNumIndividu(co, nomRealisateur, prenomRealisateur);
-							ajouterIndividu(co, numRealisateur, nomRealisateur, prenomRealisateur, "oui");
-						}
-						else
-						{
-							numRealisateur = getNumNVIndividu(co, nomRealisateur, prenomRealisateur);
-						}
-					}
-					else
-					{
-						if(!nvIndividuExiste(co, nomRealisateur, prenomRealisateur))
-						{
-							numRealisateur = calculNumIndividu(co)+1;
-							ajouterIndividu(co, numRealisateur, nomRealisateur, prenomRealisateur, "non");
-						}
-						else
-						{
-							numRealisateur = getNumNVIndividu(co, nomRealisateur, prenomRealisateur);
-						}
-					}
-					numFilm = calculNumFilm(co)+1;
-					ajouterFilm(co, numFilm, titre, numRealisateur);
-				}
+				return false;
 			}
+			if(nomRealisateur.length() >=30)
+			{
+				return false;
+			}
+			if(prenomRealisateur.length()>=30)
+			{
+				return false;
+			}
+			if(nvFilmExiste(co, titre))
+			{
+				return false;
+			}
+			
 			else
 			{
-				if(nvFilmExiste(co,titre))
+				if(filmExiste(co, titre))
 				{
 					return false;
 				}
@@ -543,7 +522,6 @@ public class Dvdiut
 					numFilm = calculNumFilm(co)+1;
 					ajouterFilm(co, numFilm, titre, numRealisateur);
 				}
-				
 			}
 			
 			/// AJOUT DES ACTEURS
